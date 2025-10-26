@@ -7,7 +7,7 @@ public class NameParser {
 
     public static List<String> parse(String input) {
         if (input == null || input.isBlank()) {
-            throw new IllegalArgumentException("이름은 비어 있을 수 없습니다.");
+            throw new IllegalArgumentException(ErrorMessage.EMPTY_NAMES);
         }
 
         List<String> carNames = Arrays.stream(input.split(","))
@@ -15,15 +15,14 @@ public class NameParser {
                 .toList();
 
         if (carNames.isEmpty()) {
-            throw new IllegalArgumentException("이름은 비어 있을 수 없습니다.");
+            throw new IllegalArgumentException(ErrorMessage.EMPTY_NAMES);
         }
 
         for (String carName : carNames) {
-            if (carName.isBlank() || carName.length() > 5) {
-                throw new IllegalArgumentException("각 이름은 1~5자여야 합니다.");
+            if (carName.isBlank() || carName.length() > GameRules.MAX_NAME_LENGTH) {
+                throw new IllegalArgumentException(ErrorMessage.INVALID_NAME_LENGTH);
             }
         }
-
         return carNames;
     }
 }

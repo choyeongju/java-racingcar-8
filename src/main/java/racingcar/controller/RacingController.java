@@ -1,9 +1,6 @@
 package racingcar.controller;
 
-import racingcar.service.Cars;
-import racingcar.service.RacingGame;
-import racingcar.service.RandomMoveStrategy;
-import racingcar.service.TryCount;
+import racingcar.service.*;
 import racingcar.view.InputView;
 import racingcar.view.OutputView;
 
@@ -17,17 +14,17 @@ public class RacingController {
     }
 
     public void run() {
-        String namesInput = inputView.readNames();
-        String tryInput = inputView.readTryCount();
+        String carNamesInput = inputView.readCarNames();
+        String tryCountInput = inputView.readTryCount();
 
-        Cars cars = Cars.of(namesInput);
-        TryCount tryCount = TryCount.from(tryInput);
-        RacingGame game = new RacingGame(cars);
+        Cars cars = Cars.of(carNamesInput);
+        TryCount tryCount = TryCount.from(tryCountInput);
+        RacingGame racingGame = new RacingGame(cars);
 
         outputView.printExecutionHeader();
 
         for (int i = 0; i < tryCount.value(); i++) {
-            game.raceOneRound(new RandomMoveStrategy());
+            racingGame.raceOneRound(new RandomMoveStrategy());
             outputView.printRound(cars);
         }
 
