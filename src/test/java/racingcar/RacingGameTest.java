@@ -3,6 +3,10 @@ package racingcar;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
+import service.Car;
+import service.Cars;
+import service.MoveStrategy;
+import service.RacingGame;
 
 import static org.assertj.core.api.Assertions.*;
 

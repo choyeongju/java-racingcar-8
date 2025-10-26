@@ -1,11 +1,11 @@
-package racingcar;
+package service;
 
 import java.util.Arrays;
 import java.util.List;
 
-class NameParser {
+public class NameParser {
 
-    static List<String> parse(String input) {
+    public static List<String> parse(String input) {
         if (input == null || input.isBlank()) {
             throw new IllegalArgumentException("이름은 비어 있을 수 없습니다.");
         }

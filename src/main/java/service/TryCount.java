@@ -1,16 +1,16 @@
-package racingcar;
+package service;
 
-class TryCount {
+public class TryCount {
     private final int tryCountValue;
 
-    private TryCount(int tryCountValue) {
+    public TryCount(int tryCountValue) {
         if (tryCountValue <= 0) {
             throw new IllegalArgumentException("시도 횟수는 자연수여야 합니다.");
         }
         this.tryCountValue = tryCountValue;
     }
 
-    static TryCount from(String input) {
+    public static TryCount from(String input) {
         if (input == null || input.isBlank()) {
             throw new IllegalArgumentException("시도 횟수는 자연수여야 합니다.");
         }
@@ -23,7 +23,7 @@ class TryCount {
         }
     }
 
-    int value() {
+    public int value() {
         return tryCountValue;
     }
 }

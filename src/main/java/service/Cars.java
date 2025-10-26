@@ -1,13 +1,13 @@
-package racingcar;
+package service;
 
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-class Cars {
+public class Cars {
     private final List<Car> carList = new ArrayList<>();
 
-    static Cars of(String rawCarNames) {
+    public static Cars of(String rawCarNames) {
         Cars cars = new Cars();
         for (String carName : NameParser.parse(rawCarNames)) {
             cars.carList.add(new Car(carName));
@@ -15,10 +15,10 @@ class Cars {
         return cars;
     }
 
-    List<Car> list() {
+    public List<Car> list() {
         return carList;
     }
-    List<Car> findWinners() {
+    public List<Car> findWinners() {
         int maxPosition = carList.stream()
                 .max(Comparator.comparingInt(Car::getPosition))
                 .map(Car::getPosition)
@@ -33,7 +33,7 @@ class Cars {
         return result;
     }
 
-    Car findByName(String targetName) {
+    public Car findByName(String targetName) {
         return carList.stream()
                 .filter(car -> car.getName().equals(targetName))
                 .findFirst()
