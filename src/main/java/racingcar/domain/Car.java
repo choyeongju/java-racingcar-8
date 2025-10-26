@@ -1,4 +1,8 @@
-package racingcar.service;
+package racingcar.domain;
+
+import racingcar.service.common.ErrorMessage;
+import racingcar.service.common.GameRules;
+import racingcar.service.strategy.MoveStrategy;
 
 public class Car {
     private final String name;

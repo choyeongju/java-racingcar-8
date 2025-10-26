@@ -1,4 +1,4 @@
-package racingcar.service;
+package racingcar.service.common;
 
 public final class GameRules {
     private GameRules() {}

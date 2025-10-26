@@ -3,9 +3,9 @@ package racingcar;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
-import racingcar.service.Car;
-import racingcar.service.Cars;
-import racingcar.service.MoveStrategy;
+import racingcar.domain.Car;
+import racingcar.domain.Cars;
+import racingcar.service.strategy.MoveStrategy;
 import racingcar.service.RacingGame;
 
 import static org.assertj.core.api.Assertions.*;

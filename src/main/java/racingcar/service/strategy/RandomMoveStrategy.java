@@ -1,6 +1,7 @@
-package racingcar.service;
+package racingcar.service.strategy;
 
 import camp.nextstep.edu.missionutils.Randoms;
+import racingcar.service.common.GameRules;
 
 public class RandomMoveStrategy implements MoveStrategy {
     @Override

@@ -1,4 +1,4 @@
-package racingcar.service;
+package racingcar.service.common;
 
 import java.util.Arrays;
 import java.util.HashSet;

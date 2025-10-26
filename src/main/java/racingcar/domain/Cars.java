@@ -1,9 +1,11 @@
-package racingcar.service;
+package racingcar.domain;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import racingcar.service.common.ErrorMessage;
+import racingcar.service.common.NameParser;
 
 public class Cars {
     private final List<Car> carList = new ArrayList<>();

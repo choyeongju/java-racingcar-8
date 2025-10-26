@@ -1,4 +1,4 @@
-package racingcar.service;
+package racingcar.service.strategy;
 
 public interface MoveStrategy {
     boolean movable();

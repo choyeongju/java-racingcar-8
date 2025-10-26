@@ -1,6 +1,9 @@
 package racingcar.controller;
 
+import racingcar.domain.Cars;
+import racingcar.domain.TryCount;
 import racingcar.service.*;
+import racingcar.service.strategy.RandomMoveStrategy;
 import racingcar.view.InputView;
 import racingcar.view.OutputView;
 
