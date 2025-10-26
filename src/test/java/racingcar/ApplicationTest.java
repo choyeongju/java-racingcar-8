@@ -15,20 +15,51 @@ class ApplicationTest extends NsTest {
     @Test
     void 기능_테스트() {
         assertRandomNumberInRangeTest(
-            () -> {
-                run("pobi,woni", "1");
-                assertThat(output()).contains("pobi : -", "woni : ", "최종 우승자 : pobi");
-            },
-            MOVING_FORWARD, STOP
+                () -> {
+                    run("pobi,woni", "1");
+                    String out = output();
+                    assertThat(out).contains("실행 결과");
+                    assertThat(out).contains("pobi : -", "woni : ");
+                    assertThat(out).contains("최종 우승자 : pobi");
+                },
+                MOVING_FORWARD, STOP
+        );
+    }
+
+    @Test
+    void 여러_회차_진행_및_공동우승자_테스트() {
+        assertRandomNumberInRangeTest(
+                () -> {
+                    run("pobi,woni,jun", "3");
+                    String out = output();
+
+                    assertThat(out).contains("실행 결과");
+                    assertThat(out).contains("pobi : --");
+                    assertThat(out).contains("jun : --");
+                    assertThat(out).contains("최종 우승자 : pobi, jun");
+                },
+                4, 3, 4,
+                4, 3, 4,
+                4, 3, 4
         );
     }
 
     @Test
     void 예외_테스트() {
         assertSimpleTest(() ->
-            assertThatThrownBy(() -> runException("pobi,javaji", "1"))
-                .isInstanceOf(IllegalArgumentException.class)
+                assertThatThrownBy(() -> runException("pobi,javaji", "1"))
+                        .isInstanceOf(IllegalArgumentException.class)
         );
+    }
+
+    @Test
+    void 입출력_흐름_테스트() {
+        run("pobi,woni,jun", "2");
+        String out = output();
+        assertThat(out).contains("경주할 자동차 이름을 입력하세요");
+        assertThat(out).contains("시도할 횟수는 몇 회인가요?");
+        assertThat(out).contains("실행 결과");
+        assertThat(out).contains("최종 우승자 :");
     }
 
     @Override
