@@ -2,8 +2,8 @@ package racingcar.view;
 
 import java.util.List;
 import java.util.stream.Collectors;
-import service.Car;
-import service.Cars;
+import racingcar.service.Car;
+import racingcar.service.Cars;
 public class OutputView {
 
     public void printExecutionHeader() {

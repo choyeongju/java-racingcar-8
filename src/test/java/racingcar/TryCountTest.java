@@ -1,7 +1,7 @@
 package racingcar;
 
 import org.junit.jupiter.api.Test;
-import service.TryCount;
+import racingcar.service.TryCount;
 
 import static org.assertj.core.api.Assertions.*;
 

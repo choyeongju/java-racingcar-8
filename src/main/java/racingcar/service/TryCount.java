@@ -1,4 +1,4 @@
-package service;
+package racingcar.service;
 
 public class TryCount {
     private final int tryCountValue;

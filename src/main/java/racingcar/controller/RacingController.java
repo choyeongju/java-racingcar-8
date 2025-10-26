@@ -1,9 +1,9 @@
 package racingcar.controller;
 
-import service.Cars;
-import service.RacingGame;
-import service.RandomMoveStrategy;
-import service.TryCount;
+import racingcar.service.Cars;
+import racingcar.service.RacingGame;
+import racingcar.service.RandomMoveStrategy;
+import racingcar.service.TryCount;
 import racingcar.view.InputView;
 import racingcar.view.OutputView;
 

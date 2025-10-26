@@ -1,4 +1,4 @@
-package service;
+package racingcar.service;
 
 public class RacingGame {
     private final Cars cars;

@@ -2,7 +2,7 @@ package racingcar;
 
 import org.junit.jupiter.api.Test;
 import java.util.List;
-import service.NameParser;
+import racingcar.service.NameParser;
 
 import static org.assertj.core.api.Assertions.*;
 
