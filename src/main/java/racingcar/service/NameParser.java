@@ -1,7 +1,9 @@
 package racingcar.service;
 
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class NameParser {
 
@@ -16,6 +18,13 @@ public class NameParser {
 
         if (carNames.isEmpty()) {
             throw new IllegalArgumentException(ErrorMessage.EMPTY_NAMES);
+        }
+
+        Set<String> seen = new HashSet<>();
+        for (String carName : carNames) {
+            if (!seen.add(carName)) {
+                throw new IllegalArgumentException(ErrorMessage.DUPLICATE_NAME);
+            }
         }
 
         for (String carName : carNames) {
