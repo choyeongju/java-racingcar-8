@@ -27,4 +27,10 @@ class NameParserTest {
         assertThatThrownBy(() -> NameParser.parse("pobi,toolong"))
                 .isInstanceOf(IllegalArgumentException.class);
     }
+
+    @Test
+    void 중복된_이름이_있으면_예외가_발생한다() {
+        assertThatThrownBy(() -> NameParser.parse("pobi,pobi"))
+                .isInstanceOf(IllegalArgumentException.class);
+    }
 }
