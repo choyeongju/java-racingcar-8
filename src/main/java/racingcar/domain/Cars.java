@@ -10,6 +10,8 @@ import racingcar.service.common.NameParser;
 public class Cars {
     private final List<Car> carList = new ArrayList<>();
 
+    private Cars() {
+
     public static Cars of(String rawCarNames) {
         Cars cars = new Cars();
         for (String carName : NameParser.parse(rawCarNames)) {
