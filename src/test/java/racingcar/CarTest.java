@@ -1,6 +1,8 @@
 package racingcar;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 import racingcar.domain.Car;
 
 import static org.assertj.core.api.Assertions.*;
@@ -14,11 +16,10 @@ class CarTest {
         assertThat(car.getPosition()).isZero();
     }
 
-    @Test
-    void 이름이_1에서_5자가_아니면_예외가_발생한다() {
-        assertThatThrownBy(() -> new Car(""))
-                .isInstanceOf(IllegalArgumentException.class);
-        assertThatThrownBy(() -> new Car("abcdefg"))
+    @ParameterizedTest
+    @ValueSource(strings = {"", "abcdefg", "1234567"})
+    void 이름이_1에서_5자가_아니면_예외가_발생한다(String invalidName) {
+        assertThatThrownBy(() -> new Car(invalidName))
                 .isInstanceOf(IllegalArgumentException.class);
     }
 
