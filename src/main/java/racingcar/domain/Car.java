@@ -10,10 +10,10 @@ public class Car {
 
     public Car(String name) {
         if (name == null || name.isBlank()) {
-            throw new IllegalArgumentException(ErrorMessage.INVALID_NAME_LENGTH);
+            throw new IllegalArgumentException(ErrorMessage.INVALID_NAME_LENGTH.message());
         }
-        if (name.length() > GameRules.MAX_NAME_LENGTH) {
-            throw new IllegalArgumentException(ErrorMessage.INVALID_NAME_LENGTH);
+        if (name.length() > GameRules.MAX_NAME_LENGTH.value()) {
+            throw new IllegalArgumentException(ErrorMessage.INVALID_NAME_LENGTH.message());
         }
         this.name = name;
     }

@@ -41,6 +41,8 @@ public class Cars {
         return carList.stream()
                 .filter(car -> car.getName().equals(targetName))
                 .findFirst()
-                .orElseThrow(() -> new IllegalArgumentException(ErrorMessage.CAR_NOT_FOUND));
+                .orElseThrow(() ->
+                        new IllegalArgumentException(ErrorMessage.CAR_NOT_FOUND.message())
+                );
     }
 }
